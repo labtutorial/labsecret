@@ -19,9 +19,19 @@ void printRoomNum(int H, int W, int N) {
 	back = N / H + 1;
 	front = N % H;
 
+	if(front == 0) {
+		front = H;
+		back--;
+	}
+
 	if(back > W)
 		printf("Don't have room\n");
-	else
-		printf("%d0%d\n", front, back);
+	else {
+		if(back < 10)
+			printf("%d0%d\n", front, back);
+		else {
+			printf("%d%d\n", front, back);
+		}
+	}
 
 }
